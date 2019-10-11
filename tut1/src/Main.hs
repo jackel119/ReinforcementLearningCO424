@@ -5,7 +5,7 @@ data SchoolState = Facebook | ClassOne | ClassTwo | ClassThree
 
 allStates :: [SchoolState]
 allStates = [Facebook, ClassOne, ClassTwo, ClassThree,
-              Pub, Pass, Sleep]
+             Pub, Pass, Sleep]
 
 gamma :: Double
 gamma = 0.5
@@ -46,7 +46,6 @@ transitionProbability Pub ClassTwo = 0.4
 transitionProbability Pub ClassThree = 0.4
 
 transitionProbability Pass Sleep = 1
-transitionProbability Pass _ = 0
 
 transitionProbability _ _ = 0
 
@@ -88,6 +87,6 @@ averageValue n s = do
 
 main :: IO ()
 main = do
-  values <- fmap (zip allStates) $ sequence $ map (averageValue 5000) $ allStates
+  values <- fmap (zip allStates) $ sequence $ map (averageValue 10000) $ allStates
   print $ show values
   return ()
