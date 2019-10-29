@@ -8,7 +8,9 @@ allStates = [Facebook, ClassOne, ClassTwo, ClassThree,
              Pub, Pass, Sleep]
 
 gamma :: Double
-gamma = 0.5
+gamma = 1
+
+
 
 instance Show SchoolState where
   show Facebook = "Facebook"
@@ -18,6 +20,7 @@ instance Show SchoolState where
   show Pub = "Pub"
   show Pass = "Pass"
   show Sleep = "Sleep"
+
 
 reward :: SchoolState -> Rational
 reward Facebook = -1
@@ -59,7 +62,7 @@ expectedReward :: SchoolState -> Rational
 expectedReward s = sum $ map (\(x, p) -> p * reward x) $ getPossibleNextStates s
 
 
-nextState :: SchoolState -> IO (SchoolState)
+nextState :: SchoolState -> IO SchoolState
 nextState s = fromList $ getPossibleNextStates s
 
 trace :: SchoolState -> IO [(SchoolState, Rational)]
@@ -72,12 +75,14 @@ trace s = do
   restOfTrace <- trace next
   return $ (s, reward s):restOfTrace
 
+
 value :: SchoolState -> IO Double
 value s = do
   states <- trace s
   return $ sum $ zipWith (*) [fromRational v | (_, v) <- states] gammas
     where
       gammas = zipWith (^) (repeat gamma) [0..]
+
 
 averageValue :: Int -> SchoolState -> IO Double
 averageValue n s = do

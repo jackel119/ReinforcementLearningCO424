@@ -1,0 +1,237 @@
+	Tue Oct 29 18:20 2019 Time and Allocation Profiling Report  (Final)
+
+	   cw1 +RTS -N -xc -p -RTS
+
+	total time  =        0.00 secs   (8 ticks @ 1000 us, 8 processors)
+	total alloc =   5,718,904 bytes  (excludes profiling overheads)
+
+COST CENTRE                                               MODULE    SRC                           %time %alloc
+
+getValue                                                  Main      app/Main.hs:97:1-42            25.0    2.2
+expectedReturn                                            Main      app/Main.hs:(163,1)-(172,50)   25.0   19.7
+policyEvaluation.policyEvaluateIteration.valueDifferences Main      app/Main.hs:210:7-92           12.5    4.1
+policyEvaluation.policyEvaluateIteration.newValues.\      Main      app/Main.hs:209:35-69          12.5    0.5
+main                                                      Main      app/Main.hs:(214,1)-(219,11)   12.5    2.2
+==                                                        Main      app/Main.hs:26:13-14           12.5    0.0
+MAIN                                                      MAIN      <built-in>                      0.0    2.2
+policyEvaluation.policyEvaluateIteration.newValues        Main      app/Main.hs:(208,7)-(209,73)    0.0    1.6
+move                                                      Main      app/Main.hs:(141,1)-(148,36)    0.0    4.8
+expectedReturn.r                                          Main      app/Main.hs:172:5-50            0.0   14.2
+expectedReturn.probabilities                              Main      app/Main.hs:167:5-56            0.0    4.7
+expectedReturn.otherActions                               Main      app/Main.hs:168:5-54            0.0    1.5
+expectedReturn.nextStates                                 Main      app/Main.hs:169:5-54            0.0   12.9
+expectedReturn.immediateRewards                           Main      app/Main.hs:170:5-44            0.0   12.1
+expectedReturn.futureRewards                              Main      app/Main.hs:171:5-69            0.0   14.8
+
+
+                                                                                                                                                           individual      inherited
+COST CENTRE                                                         MODULE                  SRC                                         no.     entries  %time %alloc   %time %alloc
+
+MAIN                                                                MAIN                    <built-in>                                  342          0    0.0    2.2   100.0  100.0
+ CAF                                                                GHC.Conc.Signal         <entire-module>                             451          0    0.0    0.0     0.0    0.0
+ CAF                                                                GHC.Float               <entire-module>                             443          0    0.0    0.8     0.0    0.8
+ CAF                                                                GHC.IO.Encoding         <entire-module>                             435          0    0.0    0.0     0.0    0.0
+ CAF                                                                GHC.IO.Encoding.Iconv   <entire-module>                             433          0    0.0    0.0     0.0    0.0
+ CAF                                                                GHC.IO.Handle.FD        <entire-module>                             425          0    0.0    0.6     0.0    0.6
+ CAF                                                                GHC.IO.Handle.Text      <entire-module>                             423          0    0.0    0.0     0.0    0.0
+ CAF                                                                GHC.Event.Thread        <entire-module>                             384          0    0.0    0.0     0.0    0.0
+ CAF                                                                GHC.Event.Poll          <entire-module>                             358          0    0.0    0.0     0.0    0.0
+ CAF:$dmrandomIO3                                                   System.Random           <no location info>                          490          0    0.0    0.0     0.0    0.0
+  getTime                                                           System.Random           System/Random.hs:(131,1)-(134,60)           701          1    0.0    0.0     0.0    0.0
+ CAF:$fRandomGenStdGen_$cnext                                       System.Random           System/Random.hs:218:3-6                    489          0    0.0    0.0     0.0    0.0
+  next                                                              System.Random           System/Random.hs:218:3-17                   718          1    0.0    0.0     0.0    0.0
+ CAF:$fShowAction12                                                 Main                    <no location info>                          652          0    0.0    0.0     0.0    0.0
+ CAF:$fShowAction3                                                  Main                    <no location info>                          655          0    0.0    0.0     0.0    0.0
+ CAF:$fShowAction9                                                  Main                    <no location info>                          653          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState10                                              Main                    <no location info>                          672          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState12                                              Main                    <no location info>                          671          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState14                                              Main                    <no location info>                          670          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState16                                              Main                    <no location info>                          669          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState18                                              Main                    <no location info>                          668          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState2                                               Main                    <no location info>                          676          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState20                                              Main                    <no location info>                          667          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState22                                              Main                    <no location info>                          666          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState4                                               Main                    <no location info>                          675          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState6                                               Main                    <no location info>                          674          0    0.0    0.0     0.0    0.0
+ CAF:$fShowGridState8                                               Main                    <no location info>                          673          0    0.0    0.0     0.0    0.0
+ CAF:allActions                                                     Main                    app/Main.hs:89:1-10                         637          0    0.0    0.0     0.0    0.0
+  allActions                                                        Main                    app/Main.hs:89:1-39                         696          1    0.0    0.0     0.0    0.0
+ CAF:allStates                                                      Main                    app/Main.hs:78:1-9                          649          0    0.0    0.0     0.0    0.0
+  allStates                                                         Main                    app/Main.hs:78:1-58                         692          1    0.0    0.0     0.0    0.0
+ CAF:b_rkFh                                                         System.Random           System/Random.hs:473:8                      499          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           745          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.b                                              System.Random           System/Random.hs:473:8-54                   746          1    0.0    0.0     0.0    0.0
+ CAF:ds_rkFd                                                        System.Random           <no location info>                          495          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           741          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.(...)                                          System.Random           System/Random.hs:472:8-36                   742          1    0.0    0.0     0.0    0.0
+    genRange                                                        System.Random           System/Random.hs:219:3-23                   743          1    0.0    0.0     0.0    0.0
+ CAF:gamma                                                          Main                    app/Main.hs:17:1-5                          650          0    0.0    0.0     0.0    0.0
+  gamma                                                             Main                    app/Main.hs:17:1-11                         797          1    0.0    0.0     0.0    0.0
+ CAF:genhi_rkFg                                                     System.Random           System/Random.hs:472:16-20                  498          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           747          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.genhi                                          System.Random           System/Random.hs:472:8-36                   748          1    0.0    0.0     0.0    0.0
+ CAF:genlo_rkFe                                                     System.Random           System/Random.hs:472:9-13                   496          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           739          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.genlo                                          System.Random           System/Random.hs:472:8-36                   740          1    0.0    0.0     0.0    0.0
+ CAF:initRandomPolicy                                               Main                    app/Main.hs:101:1-16                        660          0    0.0    0.0     0.0    0.0
+  initRandomPolicy                                                  Main                    app/Main.hs:(101,1)-(104,81)                688          1    0.0    0.0     0.0    0.0
+   initRandomPolicy.stateToActions                                  Main                    app/Main.hs:104:5-81                        689          1    0.0    0.0     0.0    0.0
+ CAF:initState1                                                     Main                    <no location info>                          661          0    0.0    0.0     0.0    0.0
+  initState                                                         Main                    app/Main.hs:118:1-55                        686          1    0.0    0.0     0.0    0.0
+ CAF:initZeroValues                                                 Main                    app/Main.hs:111:1-14                        657          0    0.0    0.0     0.0    0.0
+  initZeroValues                                                    Main                    app/Main.hs:111:1-59                        775          1    0.0    0.0     0.0    0.0
+   ==                                                               Main                    app/Main.hs:26:13-14                        776         10    0.0    0.0     0.0    0.0
+ CAF:lvl7_rkFf                                                      System.Random           <no location info>                          497          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           736          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.f                                              System.Random           System/Random.hs:(486,8)-(489,76)           737          0    0.0    0.0     0.0    0.0
+    randomIvalInteger.f.v'                                          System.Random           System/Random.hs:489:25-76                  738          0    0.0    0.0     0.0    0.0
+ CAF:main1                                                          Main                    <no location info>                          682          0    0.0    0.0     0.0    0.0
+  main                                                              Main                    app/Main.hs:(214,1)-(219,11)                684          1    0.0    0.0     0.0    0.0
+ CAF:main4                                                          Main                    <no location info>                          680          0    0.0    0.0     0.0    0.0
+  policyIteration                                                   Main                    app/Main.hs:(179,1)-(184,19)                761          1    0.0    0.0     0.0    0.0
+ CAF:p                                                              Main                    app/Main.hs:14:1                            651          0    0.0    0.0     0.0    0.0
+  p                                                                 Main                    app/Main.hs:14:1-7                          787          1    0.0    0.0     0.0    0.0
+ CAF:policyEvaluation1                                              Main                    <no location info>                          678          0    0.0    0.0     0.0    0.0
+  policyEvaluation                                                  Main                    app/Main.hs:(199,1)-(211,46)                766          1    0.0    0.0     0.0    0.0
+ CAF:policyImprovement1                                             Main                    <no location info>                          664          0    0.0    0.0     0.0    0.0
+  policyImprovement                                                 Main                    app/Main.hs:(189,1)-(195,46)                763          1    0.0    0.0     0.0    0.0
+ CAF:policyImprovement2                                             Main                    <no location info>                          663          0    0.0    0.0     0.0    0.0
+  policyImprovement                                                 Main                    app/Main.hs:(189,1)-(195,46)                827          0    0.0    0.0     0.0    0.0
+   policyImprovement.pI                                             Main                    app/Main.hs:(192,5)-(195,46)                828          0    0.0    0.0     0.0    0.0
+    policyImprovement.pI.policyChanged                              Main                    app/Main.hs:195:9-46                        829          0    0.0    0.0     0.0    0.0
+ CAF:q_rkF6                                                         System.Random           System/Random.hs:481:8                      486          0    0.0    0.0     0.0    0.0
+  randomIvalInteger                                                 System.Random           System/Random.hs:(468,1)-(489,76)           712          0    0.0    0.0     0.0    0.0
+   randomIvalInteger.q                                              System.Random           System/Random.hs:481:8-15                   713          1    0.0    0.0     0.0    0.0
+ CAF:s1                                                             Main                    app/Main.hs:46:1-2                          648          0    0.0    0.0     0.0    0.0
+  s1                                                                Main                    app/Main.hs:46:1-19                         693          1    0.0    0.0     0.0    0.0
+ CAF:s10                                                            Main                    app/Main.hs:55:1-3                          639          0    0.0    0.0     0.0    0.0
+  s10                                                               Main                    app/Main.hs:55:1-19                         758          1    0.0    0.0     0.0    0.0
+ CAF:s11                                                            Main                    app/Main.hs:56:1-3                          638          0    0.0    0.0     0.0    0.0
+  s11                                                               Main                    app/Main.hs:56:1-19                         759          1    0.0    0.0     0.0    0.0
+ CAF:s2                                                             Main                    app/Main.hs:47:1-2                          647          0    0.0    0.0     0.0    0.0
+  s2                                                                Main                    app/Main.hs:47:1-19                         750          1    0.0    0.0     0.0    0.0
+ CAF:s3                                                             Main                    app/Main.hs:48:1-2                          646          0    0.0    0.0     0.0    0.0
+  s3                                                                Main                    app/Main.hs:48:1-19                         751          1    0.0    0.0     0.0    0.0
+ CAF:s4                                                             Main                    app/Main.hs:49:1-2                          645          0    0.0    0.0     0.0    0.0
+  s4                                                                Main                    app/Main.hs:49:1-19                         752          1    0.0    0.0     0.0    0.0
+ CAF:s5                                                             Main                    app/Main.hs:50:1-2                          644          0    0.0    0.0     0.0    0.0
+  s5                                                                Main                    app/Main.hs:50:1-19                         753          1    0.0    0.0     0.0    0.0
+ CAF:s6                                                             Main                    app/Main.hs:51:1-2                          643          0    0.0    0.0     0.0    0.0
+  s6                                                                Main                    app/Main.hs:51:1-19                         754          1    0.0    0.0     0.0    0.0
+ CAF:s7                                                             Main                    app/Main.hs:52:1-2                          642          0    0.0    0.0     0.0    0.0
+  s7                                                                Main                    app/Main.hs:52:1-19                         755          1    0.0    0.0     0.0    0.0
+ CAF:s8                                                             Main                    app/Main.hs:53:1-2                          641          0    0.0    0.0     0.0    0.0
+  s8                                                                Main                    app/Main.hs:53:1-19                         756          1    0.0    0.0     0.0    0.0
+ CAF:s9                                                             Main                    app/Main.hs:54:1-2                          640          0    0.0    0.0     0.0    0.0
+  s9                                                                Main                    app/Main.hs:54:1-19                         757          1    0.0    0.0     0.0    0.0
+ CAF:stdRange                                                       System.Random           System/Random.hs:514:1-8                    494          0    0.0    0.0     0.0    0.0
+  stdRange                                                          System.Random           System/Random.hs:514:1-26                   744          1    0.0    0.0     0.0    0.0
+ CAF:theStdGen                                                      System.Random           System/Random.hs:566:1-9                    491          0    0.0    0.0     0.0    0.0
+  theStdGen                                                         System.Random           System/Random.hs:(566,1)-(568,15)           699          1    0.0    0.0     0.0    0.0
+   mkStdRNG                                                         System.Random           System/Random.hs:(452,1)-(455,55)           700          1    0.0    0.0     0.0    0.0
+    createStdGen                                                    System.Random           System/Random.hs:276:1-44                   720          1    0.0    0.0     0.0    0.0
+     mkStdGen32                                                     System.Random           System/Random.hs:(267,1)-(273,36)           721          1    0.0    0.0     0.0    0.0
+      mkStdGen32.(...)                                              System.Random           System/Random.hs:272:9-39                   723          1    0.0    0.0     0.0    0.0
+      mkStdGen32.q                                                  System.Random           System/Random.hs:272:9-39                   726          1    0.0    0.0     0.0    0.0
+      mkStdGen32.s                                                  System.Random           System/Random.hs:271:9-45                   724          1    0.0    0.0     0.0    0.0
+      mkStdGen32.s1                                                 System.Random           System/Random.hs:272:9-39                   722          1    0.0    0.0     0.0    0.0
+      mkStdGen32.s2                                                 System.Random           System/Random.hs:273:9-36                   725          1    0.0    0.0     0.0    0.0
+    getTime                                                         System.Random           System/Random.hs:(131,1)-(134,60)           702          0    0.0    0.0     0.0    0.0
+     getTime.daytime                                                System.Random           System/Random.hs:133:7-44                   703          1    0.0    0.0     0.0    0.0
+ CAF:validState                                                     Main                    app/Main.hs:83:1-10                         656          0    0.0    0.0     0.0    0.0
+  validState                                                        Main                    app/Main.hs:83:1-32                         793          1    0.0    0.0     0.0    0.0
+ main                                                               Main                    app/Main.hs:(214,1)-(219,11)                685          0   12.5    2.2   100.0   96.1
+  show                                                              Main                    app/Main.hs:(31,3)-(41,30)                  833         11    0.0    0.0     0.0    0.0
+  showsPrec                                                         Main                    app/Main.hs:64:13-16                        834         11    0.0    0.1     0.0    0.1
+  main.(...)                                                        Main                    app/Main.hs:216:7-56                        760          1    0.0    0.0    87.5   93.7
+   policyIteration                                                  Main                    app/Main.hs:(179,1)-(184,19)                762          0    0.0    0.0    87.5   93.7
+    policyEvaluation                                                Main                    app/Main.hs:(199,1)-(211,46)                767          0    0.0    0.0    87.5   87.6
+     policyEvaluation.\                                             Main                    app/Main.hs:199:39-76                       768          3    0.0    0.0    87.5   87.6
+      policyEvaluation.policyEvaluateIteration                      Main                    app/Main.hs:(203,5)-(211,46)                773        166    0.0    0.0    87.5   87.6
+       policyEvaluation.policyEvaluateIteration.maxDifference       Main                    app/Main.hs:211:7-46                        805        166    0.0    0.0     0.0    0.0
+       policyEvaluation.policyEvaluateIteration.newValues           Main                    app/Main.hs:(208,7)-(209,73)                774        166    0.0    1.6    75.0   83.5
+        policyEvaluation.policyEvaluateIteration.newValues.\        Main                    app/Main.hs:209:35-69                       777       1826   12.5    0.5    75.0   81.8
+         expectedReturn                                             Main                    app/Main.hs:(163,1)-(172,50)                780       1826   25.0   18.4    62.5   80.8
+          expectedReturn.futureRewards                              Main                    app/Main.hs:171:5-69                        784       1826    0.0   13.8    25.0   15.8
+           getValue                                                 Main                    app/Main.hs:97:1-42                         789       7304   25.0    2.0    25.0    2.0
+            compare                                                 Main                    app/Main.hs:26:17-19                        796      21912    0.0    0.0     0.0    0.0
+          expectedReturn.immediateRewards                           Main                    app/Main.hs:170:5-44                        783       1826    0.0   11.2     0.0   11.2
+           reward                                                   Main                    app/Main.hs:(155,1)-(157,13)                798       7304    0.0    0.0     0.0    0.0
+            $mRewardState.\                                         Main                    app/Main.hs:59:25-37                        799       7304    0.0    0.0     0.0    0.0
+             $mPenaltyState.\                                       Main                    app/Main.hs:60:25-37                        800       6640    0.0    0.0     0.0    0.0
+          expectedReturn.nextStates                                 Main                    app/Main.hs:169:5-54                        782       1826    0.0   12.0    12.5   16.5
+           move                                                     Main                    app/Main.hs:(141,1)-(148,36)                790       7304    0.0    4.5    12.5    4.5
+            move.newState                                           Main                    app/Main.hs:148:5-36                        791       7304    0.0    0.0     0.0    0.0
+             move.move'                                             Main                    app/Main.hs:(144,5)-(147,60)                792       7304    0.0    0.0     0.0    0.0
+            validState                                              Main                    app/Main.hs:83:1-32                         794          0    0.0    0.0    12.5    0.0
+             ==                                                     Main                    app/Main.hs:26:13-14                        795      59428   12.5    0.0    12.5    0.0
+          expectedReturn.otherActions                               Main                    app/Main.hs:168:5-54                        781       1826    0.0    1.3     0.0    1.3
+           ==                                                       Main                    app/Main.hs:64:19-20                        801       2795    0.0    0.0     0.0    0.0
+          expectedReturn.probabilities                              Main                    app/Main.hs:167:5-56                        788       1826    0.0    4.3     0.0    4.3
+          expectedReturn.probabilityOtherMove                       Main                    app/Main.hs:166:5-38                        786       1826    0.0    0.0     0.0    0.0
+          expectedReturn.r                                          Main                    app/Main.hs:172:5-50                        785       1826    0.0   13.3     0.0   13.3
+         getAction                                                  Main                    app/Main.hs:94:1-41                         778       1826    0.0    0.5     0.0    0.5
+          compare                                                   Main                    app/Main.hs:26:17-19                        779       5478    0.0    0.0     0.0    0.0
+       policyEvaluation.policyEvaluateIteration.valueDifferences    Main                    app/Main.hs:210:7-92                        802        166   12.5    4.1    12.5    4.1
+        compare                                                     Main                    app/Main.hs:26:17-19                        803       1826    0.0    0.0     0.0    0.0
+        policyEvaluation.policyEvaluateIteration.valueDifferences.\ Main                    app/Main.hs:210:65-78                       804       1826    0.0    0.0     0.0    0.0
+    policyImprovement                                               Main                    app/Main.hs:(189,1)-(195,46)                764          0    0.0    0.0     0.0    6.1
+     policyImprovement.pI                                           Main                    app/Main.hs:(192,5)-(195,46)                765          3    0.0    0.0     0.0    6.1
+      policyImprovement.pI.newPolicy                                Main                    app/Main.hs:194:9-71                        769          3    0.0    0.0     0.0    6.0
+       policyImprovement.pI.newPolicy.\                             Main                    app/Main.hs:194:45-60                       771         33    0.0    0.0     0.0    6.0
+        argMaxAction                                                Main                    app/Main.hs:175:1-66                        772         33    0.0    0.0     0.0    6.0
+         argmax                                                     Data.List.Extras.Argmax Data/List/Extras/Argmax.hs:(156,1)-(157,28) 806         33    0.0    0.0     0.0    6.0
+          expectedReturn                                            Main                    app/Main.hs:(163,1)-(172,50)                807        132    0.0    1.3     0.0    6.0
+           expectedReturn.futureRewards                             Main                    app/Main.hs:171:5-69                        811        132    0.0    1.0     0.0    1.1
+            getValue                                                Main                    app/Main.hs:97:1-42                         815        528    0.0    0.1     0.0    0.1
+             compare                                                Main                    app/Main.hs:26:17-19                        821       1584    0.0    0.0     0.0    0.0
+           expectedReturn.immediateRewards                          Main                    app/Main.hs:170:5-44                        810        132    0.0    0.8     0.0    0.8
+            reward                                                  Main                    app/Main.hs:(155,1)-(157,13)                822        528    0.0    0.0     0.0    0.0
+             $mRewardState.\                                        Main                    app/Main.hs:59:25-37                        823        528    0.0    0.0     0.0    0.0
+              $mPenaltyState.\                                      Main                    app/Main.hs:60:25-37                        824        480    0.0    0.0     0.0    0.0
+           expectedReturn.nextStates                                Main                    app/Main.hs:169:5-54                        809        132    0.0    0.9     0.0    1.2
+            move                                                    Main                    app/Main.hs:(141,1)-(148,36)                816        528    0.0    0.3     0.0    0.3
+             move.newState                                          Main                    app/Main.hs:148:5-36                        817        528    0.0    0.0     0.0    0.0
+              move.move'                                            Main                    app/Main.hs:(144,5)-(147,60)                818        528    0.0    0.0     0.0    0.0
+             validState                                             Main                    app/Main.hs:83:1-32                         819          0    0.0    0.0     0.0    0.0
+              ==                                                    Main                    app/Main.hs:26:13-14                        820       4296    0.0    0.0     0.0    0.0
+           expectedReturn.otherActions                              Main                    app/Main.hs:168:5-54                        808        132    0.0    0.2     0.0    0.2
+            ==                                                      Main                    app/Main.hs:64:19-20                        825        297    0.0    0.0     0.0    0.0
+           expectedReturn.probabilities                             Main                    app/Main.hs:167:5-56                        814        132    0.0    0.3     0.0    0.3
+           expectedReturn.probabilityOtherMove                      Main                    app/Main.hs:166:5-38                        813        132    0.0    0.0     0.0    0.0
+           expectedReturn.r                                         Main                    app/Main.hs:172:5-50                        812        132    0.0    1.0     0.0    1.0
+      policyImprovement.pI.policyChanged                            Main                    app/Main.hs:195:9-46                        826          3    0.0    0.1     0.0    0.1
+       ==                                                           Main                    app/Main.hs:64:19-20                        831         17    0.0    0.0     0.0    0.0
+       ==                                                           Main                    app/Main.hs:26:13-14                        830         17    0.0    0.0     0.0    0.0
+  main.finalState                                                   Main                    app/Main.hs:216:7-56                        832          1    0.0    0.0     0.0    0.0
+  initState                                                         Main                    app/Main.hs:118:1-55                        687          0    0.0    0.0     0.0    0.2
+   initRandomPolicy                                                 Main                    app/Main.hs:(101,1)-(104,81)                690          0    0.0    0.0     0.0    0.2
+    ==                                                              Main                    app/Main.hs:26:13-14                        770         10    0.0    0.0     0.0    0.0
+    initRandomPolicy.stateToActions                                 Main                    app/Main.hs:104:5-81                        691          0    0.0    0.0     0.0    0.2
+     initRandomPolicy.stateToActions.\                              Main                    app/Main.hs:104:34-70                       694         11    0.0    0.0     0.0    0.2
+      randomChoice                                                  Main                    app/Main.hs:(133,1)-(135,28)                695         11    0.0    0.0     0.0    0.2
+       randomRIO                                                    System.Random           System/Random.hs:321:3-49                   697         11    0.0    0.0     0.0    0.1
+        getStdRandom                                                System.Random           System/Random.hs:(586,1)-(587,26)           698         11    0.0    0.0     0.0    0.1
+         getStdRandom.swap                                          System.Random           System/Random.hs:587:9-26                   704         11    0.0    0.0     0.0    0.0
+         randomR                                                    System.Random           System/Random.hs:345:34-61                  707          0    0.0    0.0     0.0    0.1
+          randomIvalIntegral                                        System.Random           System/Random.hs:462:1-71                   708          0    0.0    0.0     0.0    0.1
+           randomIvalInteger                                        System.Random           System/Random.hs:(468,1)-(489,76)           709         11    0.0    0.0     0.0    0.1
+            randomIvalInteger.f                                     System.Random           System/Random.hs:(486,8)-(489,76)           714         22    0.0    0.0     0.0    0.1
+             randomIvalInteger.f.(...)                              System.Random           System/Random.hs:488:25-39                  717         11    0.0    0.0     0.0    0.0
+              next                                                  System.Random           System/Random.hs:218:3-17                   719          0    0.0    0.0     0.0    0.0
+               stdNext                                              System.Random           System/Random.hs:(518,1)-(528,64)           727         11    0.0    0.0     0.0    0.0
+                stdNext.k                                           System.Random           System/Random.hs:522:17-38                  730         11    0.0    0.0     0.0    0.0
+                stdNext.k'                                          System.Random           System/Random.hs:526:17-38                  733         11    0.0    0.0     0.0    0.0
+                stdNext.s1'                                         System.Random           System/Random.hs:523:17-59                  731         11    0.0    0.0     0.0    0.0
+                stdNext.s1''                                        System.Random           System/Random.hs:524:17-64                  732         11    0.0    0.0     0.0    0.0
+                stdNext.s2'                                         System.Random           System/Random.hs:527:17-60                  734         11    0.0    0.0     0.0    0.0
+                stdNext.s2''                                        System.Random           System/Random.hs:528:17-64                  735         11    0.0    0.0     0.0    0.0
+                stdNext.z                                           System.Random           System/Random.hs:520:17-34                  729         11    0.0    0.0     0.0    0.0
+                stdNext.z'                                          System.Random           System/Random.hs:519:17-58                  728         11    0.0    0.0     0.0    0.0
+             randomIvalInteger.f.g'                                 System.Random           System/Random.hs:488:25-39                  749         11    0.0    0.0     0.0    0.0
+             randomIvalInteger.f.v'                                 System.Random           System/Random.hs:489:25-76                  715         11    0.0    0.0     0.0    0.0
+             randomIvalInteger.f.x                                  System.Random           System/Random.hs:488:25-39                  716         11    0.0    0.0     0.0    0.0
+            randomIvalInteger.k                                     System.Random           System/Random.hs:482:8-20                   710         11    0.0    0.0     0.0    0.0
+            randomIvalInteger.magtgt                                System.Random           System/Random.hs:483:8-21                   711         11    0.0    0.0     0.0    0.0
+        randomR                                                     System.Random           System/Random.hs:345:34-61                  705         11    0.0    0.0     0.0    0.0
+         randomIvalIntegral                                         System.Random           System/Random.hs:462:1-71                   706         11    0.0    0.0     0.0    0.0
